@@ -1,5 +1,5 @@
 {
-  "ad_enabled": true,
+  "ad_enabled": false,
   "ad_banner_size": "BANNER",
   "ad_interval_minutes": 30,
   "ad_blocked_threshold": 10,
