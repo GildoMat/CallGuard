@@ -1,0 +1,9 @@
+{
+  "ad_enabled": true,
+  "ad_banner_size": "BANNER",
+  "ad_interval_minutes": 30,
+  "ad_blocked_threshold": 10,
+  "ad_interval_reduction_min": 5,
+  "ad_interval_floor_min": 10,
+  "config_version": 1
+}
