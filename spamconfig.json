@@ -1,0 +1,196 @@
+{
+  "config_version": 1,
+  "score_threshold_notify": 50,
+  "score_threshold_delete": 75,
+  "signatures": [
+    {
+      "id": "bank_card_blocked",
+      "category": "BANKING",
+      "weight": 35,
+      "keywords": ["carta bloccata", "carta sospesa", "carta scaduta", "conto bloccato", "accesso sospeso"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falso blocco carta/conto bancario"
+    },
+    {
+      "id": "bank_suspicious_movement",
+      "category": "BANKING",
+      "weight": 30,
+      "keywords": ["movimento sospetto", "operazione sospetta", "transazione non autorizzata", "accesso non autorizzato"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falso avviso movimento sospetto"
+    },
+    {
+      "id": "bank_verify_now",
+      "category": "BANKING",
+      "weight": 25,
+      "keywords": ["verifica subito", "verifica immediata", "conferma identita", "aggiorna i tuoi dati", "inserisci le tue credenziali"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Richiesta urgente di verifica dati bancari"
+    },
+    {
+      "id": "bank_refund",
+      "category": "BANKING",
+      "weight": 20,
+      "keywords": ["rimborso disponibile", "accredito in sospeso", "rimborso fiscale", "inserisci iban"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falso rimborso con richiesta IBAN"
+    },
+    {
+      "id": "bank_sender_hint",
+      "category": "BANKING",
+      "weight": 15,
+      "keywords": [],
+      "url_patterns": [],
+      "sender_hints": ["intesa", "unicredit", "bnl", "findomestic", "posteitaliane", "postepay", "paypal", "satispay"],
+      "description": "Mittente che imita istituto finanziario"
+    },
+    {
+      "id": "courier_failed_delivery",
+      "category": "COURIER",
+      "weight": 30,
+      "keywords": ["consegna fallita", "pacco in attesa", "tentativo di consegna", "il tuo pacco e fermo", "spese doganali", "spese di giacenza"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falsa notifica di mancata consegna pacco"
+    },
+    {
+      "id": "courier_small_payment",
+      "category": "COURIER",
+      "weight": 25,
+      "keywords": ["paga euro", "pagamento di euro", "pagamento richiesto", "1,99", "2,99", "piccola tassa"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Richiesta pagamento piccola somma per sblocco pacco"
+    },
+    {
+      "id": "courier_sender_hint",
+      "category": "COURIER",
+      "weight": 15,
+      "keywords": [],
+      "url_patterns": [],
+      "sender_hints": ["dhl", "brt", "gls", "sda", "fedex", "ups", "nexive"],
+      "description": "Mittente che imita corriere espresso"
+    },
+    {
+      "id": "inps_refund",
+      "category": "INSTITUTIONAL",
+      "weight": 35,
+      "keywords": ["rimborso inps", "bonus inps", "reddito di cittadinanza", "assegno unico", "contributi inps"],
+      "url_patterns": [],
+      "sender_hints": ["inps", "inps.it"],
+      "description": "Falso messaggio INPS con rimborso/bonus"
+    },
+    {
+      "id": "agenzia_entrate",
+      "category": "INSTITUTIONAL",
+      "weight": 35,
+      "keywords": ["agenzia delle entrate", "agenzia entrate", "irregolarita fiscale", "avviso di accertamento", "multa non pagata", "cartella esattoriale"],
+      "url_patterns": [],
+      "sender_hints": ["agenziaentrate", "agenzia-entrate"],
+      "description": "Falso avviso Agenzia delle Entrate"
+    },
+    {
+      "id": "police_fraud",
+      "category": "INSTITUTIONAL",
+      "weight": 40,
+      "keywords": ["polizia postale", "guardia di finanza", "il tuo account e sotto indagine", "mandato di arresto", "procedimento penale"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falso avviso forze dell'ordine (intimidazione)"
+    },
+    {
+      "id": "telecom_expiry",
+      "category": "TELECOM",
+      "weight": 25,
+      "keywords": ["il tuo numero scade", "sim in scadenza", "rinnova il tuo contratto", "credito residuo da riscuotere", "premio fedelta"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falsa scadenza SIM o credito da riscuotere"
+    },
+    {
+      "id": "fake_prize",
+      "category": "PRIZE",
+      "weight": 30,
+      "keywords": ["hai vinto", "sei stato selezionato", "utente del giorno", "ritira il tuo premio", "congratulazioni", "amazon ti ringrazia", "buono regalo", "gift card"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Falso premio o concorso"
+    },
+    {
+      "id": "prize_urgency",
+      "category": "PRIZE",
+      "weight": 15,
+      "keywords": ["entro 24 ore", "entro 48 ore", "offerta scade oggi", "solo per oggi", "ultima possibilita", "non perdere"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Urgenza artificiale per premi/offerte"
+    },
+    {
+      "id": "url_shortener",
+      "category": "PHISHING_URL",
+      "weight": 20,
+      "keywords": [],
+      "url_patterns": ["bit.ly/", "tinyurl.com/", "t.co/", "ow.ly/", "goo.gl/", "rb.gy/", "cutt.ly/", "shorturl.at/"],
+      "sender_hints": [],
+      "description": "URL accorciato (nasconde destinazione reale)"
+    },
+    {
+      "id": "fake_domain_bank",
+      "category": "PHISHING_URL",
+      "weight": 35,
+      "keywords": [],
+      "url_patterns": ["poste-it.", "posteitaliane-", "intesa-sanpaolo-", "unicredit-", "bnl-online.", "paypal-secure.", "amazon-it.", "amazon-support."],
+      "sender_hints": [],
+      "description": "Dominio che imita sito bancario/ufficiale"
+    },
+    {
+      "id": "url_with_login",
+      "category": "PHISHING_URL",
+      "weight": 25,
+      "keywords": [],
+      "url_patterns": ["/login", "/accedi", "/verifica", "/conferma", "/secure", "/update", "/account-blocked"],
+      "sender_hints": [],
+      "description": "URL con percorso tipico di pagina di phishing"
+    },
+    {
+      "id": "http_not_https",
+      "category": "PHISHING_URL",
+      "weight": 10,
+      "keywords": [],
+      "url_patterns": ["http://"],
+      "sender_hints": [],
+      "description": "Link non cifrato (http invece di https)"
+    },
+    {
+      "id": "premium_899",
+      "category": "PREMIUM_NUMBER",
+      "weight": 40,
+      "keywords": ["chiama il", "contattaci al"],
+      "url_patterns": ["899", "0906"],
+      "sender_hints": [],
+      "description": "Numero a pagamento italiano (899/0906)"
+    },
+    {
+      "id": "generic_urgency",
+      "category": "GENERIC",
+      "weight": 10,
+      "keywords": ["agisci immediatamente", "risposta urgente", "non ignorare", "importante avviso", "il tuo account verra eliminato"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Linguaggio d'urgenza generico"
+    },
+    {
+      "id": "generic_click_link",
+      "category": "GENERIC",
+      "weight": 10,
+      "keywords": ["clicca qui", "clicca sul link", "apri il link", "visita subito", "accedi ora"],
+      "url_patterns": [],
+      "sender_hints": [],
+      "description": "Invito generico a cliccare link"
+    }
+  ]
+}
